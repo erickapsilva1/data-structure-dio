@@ -3,18 +3,18 @@ package com.projeto.queue;
 public class Main {
     public static void main(String[] args) {
 
-        Queue myQueue = new Queue();
+        Queue<String> myQueue = new Queue<>();
 
-        myQueue.enqueue(new Node("first"));
-        myQueue.enqueue(new Node("second"));
-        myQueue.enqueue(new Node("third"));
-        myQueue.enqueue(new Node("fourth"));
+        myQueue.enqueue("first");
+        myQueue.enqueue("second");
+        myQueue.enqueue("third");
+        myQueue.enqueue("fourth");
 
         System.out.println(myQueue);
         System.out.println(myQueue.dequeue());
         System.out.println(myQueue);
 
-        myQueue.enqueue(new Node("last"));
+        myQueue.enqueue("last");
 
         System.out.println(myQueue);
         System.out.println(myQueue.first());

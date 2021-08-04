@@ -1,14 +1,14 @@
 package com.projeto.queue;
 
-public class Queue {
+public class Queue<T> {
 
-    private Node refEntry;
+    private Node<T> refEntry;
 
     public Queue() {
         this.refEntry = null;
     }
 
-    public Node first(){
+    public T first(){
         if(!this.isEmpty()){
             Node first = refEntry;
             while (true){
@@ -18,12 +18,12 @@ public class Queue {
                     break;
                 }
             }
-            return first;
+            return (T) first.getObject();
         }
         return null;
     }
 
-    public Node dequeue(){
+    public T dequeue(){
         if(!this.isEmpty()){
             Node first = refEntry;
             Node auxNode = refEntry;
@@ -36,12 +36,13 @@ public class Queue {
                     break;
                 }
             }
-            return first;
+            return (T) first.getObject();
         }
         return null;
     }
 
-    public void enqueue(Node newNode){
+    public void enqueue(T obj){
+        Node newNode = new Node(obj);
         newNode.setRefNode(refEntry);
         refEntry = newNode;
     }
